@@ -1,0 +1,59 @@
+:root{
+      --primary:#0d6efd; /* blue */
+      --dark:#0b0f1a;    /* near-black */
+      --bg:#0f172a;      /* slate */
+      --card:#111827;    /* dark card */
+      --muted:#94a3b8;
+      --success:#22c55e;
+}
+body
+{
+background:linear-gradient(180deg,var(--bg),#020617);
+color:#e5e7eb;
+}
+.fw-bold{
+    font-size: 3rem;
+    color:#0d6efd;
+}
+.card{
+    background: var(--card);
+    border-radius:18px ;
+    box-shadow: 0 10px 24px rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.05);
+}
+.balance{
+    font-size:2rem; 
+    font-weight: 800;
+    color: #93edfd; 
+}
+.badge-soft
+{
+    background: rgba(13,110,253,.15);
+    color:#93edfd;
+}
+.nav-bottom
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:#020617;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+.nav-bottom a{ 
+    color:#9ca3af; 
+    text-decoration:none; 
+    font-size:.9rem;
+}    
+.nav-bottom a.active{ 
+    color:#60a5fa;
+ }
+.btn-primary{ 
+    background:var(--primary); 
+    border:none; 
+}
+.input-dark{ 
+        background:#020617; 
+        border:1px solid rgba(255,255,255,.1); 
+        color:#e5e7eb; 
+    }
