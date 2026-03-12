@@ -57,3 +57,12 @@ color:#e5e7eb;
         border:1px solid rgba(255,255,255,.1); 
         color:#e5e7eb; 
     }
+button{
+    background: var(--primary);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: center;
+}

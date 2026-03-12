@@ -1,0 +1,23 @@
+body{
+    background:#020617;
+    color:#e5e7eb;
+}
+.card{
+    background:#111827;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.08);
+    
+}
+.btn-primary{
+    background:#0d6efd;
+    border: none;
+}
+nav{
+    width: auto;
+    height: auto;
+    background:#111827;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.08);
+    overflow: hidden;
+    box-shadow: 0 6px 6px rgba(0,0,0,.23);
+}

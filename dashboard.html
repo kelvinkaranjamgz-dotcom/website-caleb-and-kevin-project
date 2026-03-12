@@ -6,6 +6,7 @@
     <title>LEBO EARN DASHBOARD</title>
     <link href="dashboard.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="images/Logo design for 'Leb2.png">
 </head>
 <body>
     <div class="container py-4 mb-5">
@@ -15,7 +16,7 @@
   </div>
    <div class="card p-3 my-3">
     <div class="text-muted">Wallet Balance</div>
-    <div class="balance">KES 0.00</div>
+    <div class="balance">Balance: KES <span id="wallet">0</span></div>
   </div>
   
   <div class="row g-3">
@@ -30,22 +31,41 @@
         <h6 class="mb-1">Read Articles</h6>
         <small class="text-success">+ KES 3</small>
       </div>
+     <button onclick="earnVideo()">Watch & Earn</button> 
     </div>
   </div>
 
   <div class="card p-3 my-3">
     <h6 class="mb-2">Your Referral Link</h6>
     <input class="form-control input-dark" value="https://leboearn.com/register?ref=ABC123" readonly>
-    <small class="text-muted">Earn KES 52.50 per referral</small>
+    <small class="text-muted">Share this code to earn 15% of your referrals' registration fee</small>
   </div>
 </div>
 
 <nav class="nav-bottom d-flex justify-content-around py-2">
   <a href="#" class="active">Dashboard</a>
-  <a href="#">Videos</a>
-  <a href="#">Articles</a>
-  <a href="#">Withdraw</a>
+  <a href="videos.html">Videos</a>
+  <a href="article.html">Articles</a>
+  <a href="withdraw.html">Withdraw</a>
 </nav>
+
+<script>
+async function getWallet() {
+  const res = await fetch("http://localhost:5000/api/user/1");
+  const data = await res.json();
+  document.getElementById("wallet").innerText = data.wallet;
+}
+ async function earnVideo() {
+    await fetch("http://localhost:5000/api/earn/video", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: 1 })
+    });
+
+    getWallet(); // update wallet after earning
+  }
+getWallet();
+</script>
     
 </body>
 </html>
